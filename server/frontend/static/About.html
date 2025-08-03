@@ -1,6 +1,8 @@
+{% load static %}
 <html>
 <head>
-  <!-- Link the style sheet here -->
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
 </head>
 <div>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
@@ -27,36 +29,37 @@
   
     <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
       <div class="banner" name="about-header">
-      <!-- Insert header information here -->
+        <h1>About Us</h1>
+        Welcome to Best Cars dealership, home to the best cars in North America. We deal in sale of domestic and imported cars at reasonable prices.
       </div>
       <div style="display: flex;flex-direction: row; margin:auto">
       <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
+        <img class="card-img-top" src="{% static 'person.png' %}" alt="Card image">
         <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
+          <p class="title">Alex Johnson</p>
+          <p>Sales Manager</p>
+          <p class="card-text">Alex has over 10 years of experience helping customers find their perfect car. He’s known for his professionalism and deep knowledge of both domestic and imported vehicles.</p>
+          <p>alex.johnson@example.com</p>
         </div>
       </div>
 
       <div class="card" style="width: 30%;">
         <img class="card-img-top" src="/static/person.png" alt="Card image">
         <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
+          <p class="title">Linda Chen</p>
+          <p>Finance Specialist</p>
+          <p class="card-text">Linda is dedicated to finding the best financing solutions for each customer. Her clear explanations and warm personality make the buying process easy and stress-free.</p>
+          <p>linda.chen@example.com</p>
         </div>
       </div>
 
       <div class="card" style="width: 30%;">
         <img class="card-img-top" src="/static/person.png" alt="Card image">
         <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
+          <p class="title">Marcus Lee</p>
+          <p>Service Advisor</p>
+          <p class="card-text">Marcus ensures your vehicle stays in excellent condition after purchase. He’s responsive, organized, and committed to top-tier service.</p>
+          <p>marcus.lee@example.com</p>
         </div>
       </div>
     </div>
