@@ -1,17 +1,16 @@
-'use strict';
+/*jshint esversion: 8 */
+const mongoose = require('mongoose');
 
-const { Schema, model } = require('mongoose');
+const Schema = mongoose.Schema;
 
-const ReviewSchema = new Schema({
-  id: {
+const reviews = new Schema({
+	id: {
     type: Number,
     required: true,
-    unique: true, // 防止重复 id
-  },
-  name: {
+	},
+	name: {
     type: String,
-    required: true,
-    trim: true,
+    required: true
   },
   dealership: {
     type: Number,
@@ -19,34 +18,28 @@ const ReviewSchema = new Schema({
   },
   review: {
     type: String,
-    required: true,
-    trim: true,
+    required: true
   },
   purchase: {
     type: Boolean,
-    required: true,
+    required: true
   },
   purchase_date: {
-    type: Date, // 更合适
-    required: true,
+    type: String,
+    required: true
   },
   car_make: {
     type: String,
-    required: true,
-    trim: true,
+    required: true
   },
   car_model: {
     type: String,
-    required: true,
-    trim: true,
+    required: true
   },
   car_year: {
     type: Number,
-    required: true,
-    min: 1886, // 世界上第一辆车诞生的年份 😂
+    required: true
   },
 });
 
-// Mongoose 会自动用小写复数作为 collection 名：reviews
-module.exports = model('Review', ReviewSchema);
-
+module.exports = mongoose.model('reviews', reviews);

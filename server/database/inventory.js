@@ -1,39 +1,34 @@
-'use strict';
+/*jshint esversion: 8 */
+const { Int32 } = require('mongodb');
+const mongoose = require('mongoose');
 
-const { Schema, model } = require('mongoose');
+const Schema = mongoose.Schema;
 
-const CarSchema = new Schema({
-  dealer_id: {
+const cars = new Schema({
+dealer_id: {
     type: Number,
-    required: true,
-  },
-  make: {
+    required: true
+},
+make: {
     type: String,
-    required: true,
-    trim: true,
+    required: true
   },
-  model: {
+model: {
     type: String,
-    required: true,
-    trim: true,
+    required: true
   },
-  bodyType: {
+bodyType: {
     type: String,
-    required: true,
-    trim: true,
+    required: true
   },
-  year: {
+year: {
     type: Number,
-    required: true,
-    min: 1886,
-    max: new Date().getFullYear(),
+    required: true
   },
-  mileage: {
+mileage: {
     type: Number,
-    required: true,
-    min: 0,
-  },
+    required: true
+  }
 });
 
-// Mongoose 会自动把 'Car' → 'cars' 作为集合名
-module.exports = model('Car', CarSchema);
+module.exports = mongoose.model('cars', cars);
